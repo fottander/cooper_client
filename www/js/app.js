@@ -1,4 +1,11 @@
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ng-token-auth'])
+    .constant('API_URL', 'https://fo-cooper-api.herokuapp.com/api/v1')
+
+  .config(function ($authProvider, API_URL) {
+    $authProvider.configure({
+      apiUrl: API_URL
+    });
+  })
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
