@@ -5,10 +5,6 @@ angular.module('starter.controllers', [])
   // Form data for the login modal
   $scope.loginData = {};
 
-  $rootScope.$on('auth:login-success', function(ev, user) {
-    $scope.currentUser = user;
-  });
-
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
@@ -44,6 +40,10 @@ angular.module('starter.controllers', [])
     $timeout(function() {
       $scope.closeLogin();
     }, 1000);
+
+    $rootScope.$on('auth:login-success', function(ev, user) {
+      $scope.currentUser = user;
+    });
 })
 
 .controller('TestController', function($scope) {
