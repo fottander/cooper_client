@@ -29,13 +29,17 @@ angular.module('starter.controllers', [])
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
+    $ionicLoading.show({
+      template: 'Logging in...'
+    });
     $auth.submitLogin($scope.loginData)
       .then(function (resp) {
         // handle success response
+        $ionicLoading.hise();
         $scope.closeLogin();
       })
       .catch(function (error) {
-        //handle error response
+        $ionicLoading.hide();
         $scope.errorMessage = error;
       });
   };
