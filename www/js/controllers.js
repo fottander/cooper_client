@@ -55,6 +55,15 @@ angular.module('starter.controllers', [])
     });
 })
 
+.controller('PerformanceCtrl', function($scope, performaceData){
+  $scope.saveData = function(){
+
+  };
+  $scope.retrieveData = function(){
+
+  };
+})
+
 .controller('TestController', function($scope) {
   $scope.gender = ['Male', 'Female'];
   $scope.ageValues = {
