@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "ng-token-auth": "^0.0.29",
-    "angular-resource": "^1.6.3"
+    "angular-resource": "1.5.8",
+    "angular-aria": "1.5.8"
   }
 }
