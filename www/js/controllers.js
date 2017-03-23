@@ -35,7 +35,7 @@ angular.module('starter.controllers', [])
     $auth.submitLogin($scope.loginData)
       .then(function (resp) {
         // handle success response
-        $ionicLoading.hise();
+        $ionicLoading.hide();
         $scope.closeLogin();
       })
       .catch(function (error) {
@@ -58,7 +58,7 @@ angular.module('starter.controllers', [])
 .controller('PerformanceCtrl', function($scope, performaceData, $ionicLoading, $ionicPopup){
 
   $scope.saveData = function(person){
-    var data = {performace_data: {data: {message: person.cooperMessage}}};
+    var data = {performance_data: {data: {message: person.cooperMessage}}};
     $ionicLoading.show({
       template: 'Saving...'
     });
@@ -72,7 +72,7 @@ angular.module('starter.controllers', [])
   };
 
   $scope.retrieveData = function(){
-
+  //Still not implemented...
   };
 
   $scope.showAlert = function(message, content) {
@@ -81,7 +81,7 @@ angular.module('starter.controllers', [])
       template: content
     });
     alertPopup.then(function(res) {
-
+    // Place some action here if needed...
     });
   };
 })
