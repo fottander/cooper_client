@@ -1,9 +1,13 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $rootScope, $ionicModal, $timeout) {
 
   // Form data for the login modal
   $scope.loginData = {};
+
+  $rootScope.$on('auth:login-success', function(ev, user) {
+    $scope.currentUser = user;
+  });
 
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
