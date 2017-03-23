@@ -33,18 +33,17 @@ angular.module('starter.controllers', [])
         //handle error response
         $scope.errorMessage = error;
       });
-    };
+  };
 
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
     $timeout(function() {
       $scope.closeLogin();
     }, 1000);
-  };
 })
 
 .controller('TestController', function($scope) {
-  $scope.gender = ['Male', 'Female']
+  $scope.gender = ['Male', 'Female'];
   $scope.ageValues = {
     min: 20,
     max: 60,
@@ -63,6 +62,6 @@ angular.module('starter.controllers', [])
     });
     person.assessCooper($scope.data.distance);
     $scope.person = person;
-    console.log($scope.person)
+    console.log($scope.person);
   };
 });
